@@ -2,7 +2,7 @@
 =    Welcome to the VIM Tutor Extended                       Version 1.0      =
 ===============================================================================
 
-      ** If you have it, turn on syntax colors with :so tutor-syntax.vim **
+      ** If you have it, turn on syntax colors with :so syntax/tutor.vim **
 
      Make sure you have completed the original vimtutor. You should already be
      familiar with all of the following commands.
