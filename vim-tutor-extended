@@ -61,8 +61,8 @@
      Please try all the excersises, and even more importantly, try to use them
      in your day-to-day text editing.
 
-     Do not rush. You will learn best if you do one section at a time, and try
-     to apply what you learn in real situations. Don't move on until
+     Do not rush. You will learn best if you do a small amount at a time, and
+     try to apply what you learn in real situations. Don't move on until
 
           - you learn to use the command without thinking too hard,
 	    or
@@ -122,8 +122,8 @@ NOTE: Typically, the upper-case version of a command in normal mode does
 
   7. Press  C  to chop off the end of the line, and then type it in correctly.
 
-     of this sentence is missing.
----> The beginning of this sentence is missing.
+     ng of this sentence was missing.
+---> The beginning of this sentence was missing.
 ---> The end of this senWQEEXNMOXQXEMDF MSFMP IEXMXPFD!
 ---> The end of this sentence is now ungarbled.
 
@@ -149,9 +149,9 @@ NOTE: R  enters replace mode, which is similar to insert mode.
      Lesson 2 taught you that  w  moves to the next word, while  dw  deletes
      to there.
 
-  1. Move the cursor just after the ---> below.
+  1. Move the cursor just after the first ---> below.
 
-  2. Press  w, W, b, B, e, and E  to move forward and backword one word or
+  2. Press  w, W, b, B, e, and E  to move forward and backward one word or
      one WORD at a time. Try them all here:
 
 ---> A sentence with words and "-WORDS-" in it.
@@ -182,7 +182,7 @@ NOTE: W, B, and E operate on WORDS. WORDS are only delimited by whitespace,
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		    Lesson 8.4: SENTENCE, PARAGRAPH MOVEMENT
 
-  1. {{TODO}}
+  1. {{TODO: dap dip das dis}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		     Lesson 8.5: MAGIC CHARACTERS IN SEARCH
@@ -221,11 +221,11 @@ NOTE: The magic that is happening is actually regular expressions. There are
       magic characters in search (regular expressions).
 
             ^     This character matches the beginning of a line as though
-	          that were a character. Only magic when used at the
+	          that were a character. It is only magic when used at the
 		  beginning of the search pattern.
 
-            $     Matches the end of a line. Only magic when used at the end
-		  of the search pattern.
+            $     Matches the end of a line. It is only magic when used at
+	          the end of the search pattern.
 
             .     Matches any character except a line break.
 
@@ -246,14 +246,14 @@ NOTE: The magic that is happening is actually regular expressions. There are
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		       Lesson 8.7: VISUAL SELECTION MODES
 
-  1. Lesson 5 taught you that  v  enters Visual mode, in which you can select
+     Lesson 5 taught you that  v  enters Visual mode, in which you can select
      multiple characters.
 
-  1. Move you cursor to the T in the first line marked ---> below.
+  1. Move your cursor to the T in the first line marked ---> below.
 
   2. Press  v  to enter visual mode.
 
-  3. Press  e  several times to extend the selected to the end of the next
+  3. Press  e  several times to extend the selection to the end of the next
      word.
 
   4. Press  o  to switch the cursor to the other end of the selection.
@@ -265,7 +265,7 @@ NOTE: The magic that is happening is actually regular expressions. There are
 
 ---> There are three distinct visual modes:
 ---> Character-wise, in which you select characters in reading order,
----> Line-wise, in which you select whole lines only, and
+---> Line-wise, in which you select whole lines, and
 ---> Block-wise, in which you select a rectangular block of characters.
 
   7. Make sure your cursor is still in the ---> marked area, and press  V
@@ -312,9 +312,14 @@ NOTE: Two extremely powerful commands were sneaked into this section:
   2. {{TODO: yy Y, relation to dd cc D C etc.}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				Lesson 8 SUMMARY
+
+     {{TODO}}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			    Lesson 9.1: KEY MAPPINGS
 
-  1. Type this, literally, including the angle brackets, followed by return:
+  1. Type this, literally, including the angle brackets, then press enter:
 
           :nmap <F2> ^y$:<C-R>"<CR>
 

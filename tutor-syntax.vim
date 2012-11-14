@@ -8,3 +8,4 @@ syn match WarningMsg /--->/     contained
 syn match ErrorMsg   /!! NOTE:.*!!/
 syn match Title      /^\s*Lesson [0-9.]\+\(:\| SUMMARY\).*$/
 syn match Title      /^=.*$/
+syn match Comment    /^\s*\*\*[^*].*[^*]\*\*\s*$/
