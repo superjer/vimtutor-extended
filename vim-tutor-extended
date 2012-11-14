@@ -1,0 +1,354 @@
+===============================================================================
+=    Welcome to the VIM Tutor Extended                       Version 1.0      =
+===============================================================================
+
+      ** If you have it, turn on syntax colors with :so tutor-syntax.vim **
+
+     Make sure you have completed the original vimtutor. You should already be
+     familiar with all of the following commands.
+
+      ** NOTE: <C-G> means CTRL-G. **
+
+     1.   h j k l     Move the cursor in normal mode.
+	  <ESC>       Return to normal mode.
+	  :q!         Quit without saving changes.
+	  x           Delete a character.
+	  i           Insert text before the cursor.
+	  A           Append text to the end of the line.
+	  :wq         Save and quit.
+
+     2.   dw de d$    Delete to the next word, end of word, end of line.
+	  w e $       Move to next word, end of word, end of line.
+	  0           Move all the way left.
+	  dd          Delete the line.
+	  u U <C-R>   Undo a change, all changes on the line, redo.
+
+     3.   p           Put (paste) recently deleted or yanked text.
+          rx          Replace one character with x.
+	  ce cw c$    Change text to end of word, next word, end of line.
+
+     4.   <C-G>       See filename.
+          G gg 123G   Go to last line, first line, line 123.
+	  /hello      Search for 'hello'.
+	  n N         Search next, previous.
+	  ?hello      Search for 'hello' in reverse direction.
+	  <C-O> <C-I> Jump back to where you were, forward. **WAY COOL**
+	  %           Jump to matching ( [ { < > } ] ).
+          :%s/a/b/gc  Replace a's with b's on [%] every line, multiple [g]
+	              times per line, with [c] confirmation.
+
+     5.   :!CMD       Run external command CMD, e.g. :!ls or :!dir.
+          v           Visually select text.
+          :w FILE     Write selected text to FILE.
+	  :r FILE     Read in contents of FILE.
+	  :r !CMD     Read in the output from running CMD.
+
+     6.   o O         Open a new line below, above.
+          a           Append text after the cursor.
+	  R           Replace (overwrite) text.
+	  yw          Yank (copy) a word.
+	  :set OPT    Turn option OPT on.
+	  :set noOPT  Turn option OPT off.
+
+     7.   :h :help    Open help window.
+          <C-W><C-W>  Move to next window.
+	  :e $MYVIMRC Edit your Vim config file.
+	  <C-D> <TAB> In commandline mode, suggest completions.
+
+     If any of these are totally unfamiliar, go back to vimtutor and catch up.
+
+     Just like vimtutor, this document is intended to be used interactively.
+     Please try all the excersises, and even more importantly, try to use them
+     in your day-to-day text editing.
+
+     Do not rush. You will learn best if you do one section at a time, and try
+     to apply what you learn in real situations. Don't move on until
+
+          - you learn to use the command without thinking too hard,
+	    or
+	  - you decide you don't really want to use it anyway.
+
+     You don't have to learn everything, just the parts you find useful.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 8: FILLING IN THE BLANKS
+
+     Vimtutor introduces many commands, but skips closely related alternate
+     commands. This section will introduce the alternate versions of the
+     commands you already know. It should also help reinforce your knowledge.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		       Lesson 8.1: PAGING AND BACKSPACING
+
+  1. In Lesson 1 you learned to move around with h,j,k,l. Press j and k to
+     move down and up.
+
+  2. Now we'll try <C-D> and <C-U>. These move your cursor and screen down
+     and up by half a page at a time. Browse the document and come back.
+
+NOTE: <C-D> means CTRL-D, that is, press the control key and the letter D.
+
+  3. Lesson 1 also taught you to use x to delete characters. Upper-case X is
+     similar, but deletes the preceding character. Use x and X to fix up the
+     sentence marked ---> below.
+
+NOTE: Use u to undo if you make a mistake.
+
+---> I want somQQe ice creQam nowQQQQQ.
+
+NOTE: Typically, the upper-case version of a command in normal mode does
+      something similar, but different.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		      Lesson 8.2: MANY WAYS TO INSERT MODE
+
+	     ** Press I to insert at the beginning of the line. **
+       ** Press C to chop off the end of the line and insert new text. **
+
+  1. You know to use i, a, and A to insert, append, and append at the end of
+     the line. Try these again.
+
+  2. There are many other ways into Insert mode. Move your cursor to the
+     middle of the first line marked ---> below.
+
+  3. Press  k  to go one line up.
+
+  4. Press  I  to insert the beginning of the sentence and make it look like
+     the line below it.
+
+  5. Press <ESC> to leave insert mode.
+
+  6. Move your cursor to the W on the second line marked --->.
+
+  7. Press  C  to chop off the end of the line, and then type it in correctly.
+
+     of this sentence is missing.
+---> The beginning of this sentence is missing.
+---> The end of this senWQEEXNMOXQXEMDF MSFMP IEXMXPFD!
+---> The end of this sentence is now ungarbled.
+
+NOTE:     I           Insert text at the beginning of the line, but after any
+	              whitespace.
+	  C  c$       Delete the rest of the line and enter insert mode.
+	  S  cc       Delete the whole line and enter insert mode.
+          s           Delete one character and enter insert mode. If there is
+	              a visual selection, delete that.
+
+NOTE: All these letters enter insert mode:  a A i I s S c C o O
+
+NOTE: R  enters replace mode, which is similar to insert mode.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			   Lesson 8.3: WORD MOVEMENTS
+
+	      ** Use the W, B, and E keys to move among words. **
+
+     Movements commands can be used alone, just to move, or after an operator,
+     to influence what it operates on.
+
+     Lesson 2 taught you that  w  moves to the next word, while  dw  deletes
+     to there.
+
+  1. Move the cursor just after the ---> below.
+
+  2. Press  w, W, b, B, e, and E  to move forward and backword one word or
+     one WORD at a time. Try them all here:
+
+---> A sentence with words and "-WORDS-" in it.
+---> Some words have *special* charac-ters or #punctuation aroun'd them.
+---> When taken together, these are considered WORDS.
+---> A long WORD: http://some.example.org/url.html
+
+NOTE: w, b, and e operate on words. words can NOT have a mix of punctuation
+      and alphanumeric characters. A sequence of punctuation is its own word.
+
+NOTE: W, B, and E operate on WORDS. WORDS are only delimited by whitespace,
+      and can therefore include letters, numbers, and punctuation.
+
+      This URL is made of one WORD, or eleven words:
+
+      WORDS:   http://some.example.org/url.html
+      words:   http  ://  some  .  example  .  org  /  url  .  html
+
+  3. Using only  W  and  B,  move your cursor to the WORD '*special*' above.
+     Then press  dW  to delete the WORD.
+
+  4. Using only  W  and  B,  move your cursor to the word 'together' above.
+     Press  cw  and change it to 'combined'.
+
+  5. Move only with  w, W, b, B, e, and E,  and make three more changes with
+     these commands:  d2W  c3w  dE
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		    Lesson 8.4: SENTENCE, PARAGRAPH MOVEMENT
+
+  1. {{TODO}}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 8.5: MAGIC CHARACTERS IN SEARCH
+
+  1. Turn on search match highlighting. Type  :set hls  and press enter.
+
+  2. Lesson 4 taught you to use  /text  to search for text. Try searching for
+     four stars (****) below by typing  /****  and press enter.
+
+  3. Notice that you get an error. The reason for this is that some characters
+     have a magic meaning in search, by default.
+
+  4. Instead, type  /\*\*\*\*  and press enter. The  \  character removes the
+     magic meaning from each star.
+
+NOTE: Remember to use  n  and  N  to jump to the next and previous matches.
+
+  5. Now type  /\V****  and press enter. The  \V  sequence removes the magic
+     meaning from all subsequent characters.
+
+---> Some text within which to search for **** stars and such things....
+---> More text with tricky **** characters....
+
+NOTE: The magic characters that may cause you trouble are:
+
+            ^ $ . * [ / \ ~
+
+NOTE: The magic that is happening is actually regular expressions. There are
+      entire books on the subject, so it will not be fully explained here. For
+      more information, see  :help regexp
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Lesson 8.6: MAGIC CHARACTER MEANINGS
+
+      This section will very briefly describe the meanings of the default
+      magic characters in search (regular expressions).
+
+            ^     This character matches the beginning of a line as though
+	          that were a character. Only magic when used at the
+		  beginning of the search pattern.
+
+            $     Matches the end of a line. Only magic when used at the end
+		  of the search pattern.
+
+            .     Matches any character except a line break.
+
+	    *     Means that the preceding character can be matched zero or
+	          more times. E.g.  ba*  matches all these:
+		      'b'  'ba'  'baa'  'baaa'  'baaaa'  ...
+
+	    [     Specifies a group of characters, only one of which must
+	          match. E.g.  b[eoy]  matches  'be'  or  'bo'  or  'by'.
+
+            /     Indicates the end of the search pattern.
+
+	    \     Removes (or adds) magic on the next character.
+
+	    ~     Matches the last used substitute string. This helps you
+	          search for  new  after a  :%s/old/new  substitution.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		       Lesson 8.7: VISUAL SELECTION MODES
+
+  1. Lesson 5 taught you that  v  enters Visual mode, in which you can select
+     multiple characters.
+
+  1. Move you cursor to the T in the first line marked ---> below.
+
+  2. Press  v  to enter visual mode.
+
+  3. Press  e  several times to extend the selected to the end of the next
+     word.
+
+  4. Press  o  to switch the cursor to the other end of the selection.
+
+  5. Press  w  several times to shrink the selection by a word at a time.
+
+  6. Press  b  several times to re-grow the selection by going back a word
+     at a time. Press <ESC> when done.
+
+---> There are three distinct visual modes:
+---> Character-wise, in which you select characters in reading order,
+---> Line-wise, in which you select whole lines only, and
+---> Block-wise, in which you select a rectangular block of characters.
+
+  7. Make sure your cursor is still in the ---> marked area, and press  V
+     (uppercase) to enter visual line-wise mode.
+
+  8. Press  j  and  k  until all four lines are selected.
+
+NOTE: Notice that pressing  o  still switches to the other end.
+
+  9. Press  d  to delete the selected lines.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		     Lesson 8.7: VISUAL BLOCK MODE AND MORE
+
+  1. Move your cursor to the X on the first line below marked --->.
+
+  2. Press  <C-V>  to enter visual block mode.
+
+  3. Press  j  three times so that the bad characters XQZ# are all selected.
+
+  4. Press  r,  to replace them all with commas.
+
+  5. Press  fs  to find the next s character.
+
+  6. Press  .  to repeat the last change.
+
+---> A man, a planX a canals Panama!
+---> A van, a planQ a canals Panava!
+---> A car, a planZ a canals Paraca!
+---> A nan, a bran# a lanars Banana!
+
+NOTE: Two extremely powerful commands were sneaked into this section:
+            fx     to find the next character x.
+            .      to repeat a change.
+      These will be explained in more detail. For now, try making some more
+      visual block selections. What happens when you use  d  (delete) and
+      p  (put)?
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 Lesson 8.8: YANK AND SHORTCUTS
+
+  1. Lesson 6 taught you that  y  is used to yank (copy) text.
+
+  2. {{TODO: yy Y, relation to dd cc D C etc.}}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			    Lesson 9.1: KEY MAPPINGS
+
+  1. Type this, literally, including the angle brackets, followed by return:
+
+          :nmap <F2> ^y$:<C-R>"<CR>
+
+     What it means:
+          :nmap is a command that remaps a key or keys, in normal mode,
+          <F2>  is the key to remap, it could also be a sequence of keys,
+                The rest of the line is the sequence of key presses that will
+		result from pressing <F2>:
+          ^     goes to the beginning of the line,
+          y$    yanks to the end of the line, not including the line break,
+          :     is just like the one in :nmap -- it is the start of a command,
+          <C-R> is control-R, which fetches the contents of a register,
+          "     is the name of the register that contains the most recently
+	        yanked text,
+          <CR>  means Carriage Return; it completes the command.
+
+     What it does:
+          It copies the current line into command mode and executes it.
+
+  2. Now you can run lines from this file as commands, just by pressing <F2>.
+
+     Try it now. Move the cursor to the line below, and press <F2>:
+
+          :nmap <C-DOWN> ddp
+
+  3. Now if you hold Control, and press the down arrow, the line will move
+     down. Use it to fix the lines below:
+
+---> d) Can you learn too?
+---> c) Intelligence is learned,
+---> a) Roses are red,
+---> b) Violets are blue,
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+     This concludes the Vim Tutor Extended.
+
