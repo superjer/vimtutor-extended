@@ -10,50 +10,50 @@
       ** NOTE: <C-G> means CTRL-G. **
 
      1.   h j k l     Move the cursor in normal mode.
-	  <ESC>       Return to normal mode.
-	  :q!         Quit without saving changes.
-	  x           Delete a character.
-	  i           Insert text before the cursor.
-	  A           Append text to the end of the line.
-	  :wq         Save and quit.
+          <ESC>       Return to normal mode.
+          :q!         Quit without saving changes.
+          x           Delete a character.
+          i           Insert text before the cursor.
+          A           Append text to the end of the line.
+          :wq         Save and quit.
 
      2.   dw de d$    Delete to the next word, end of word, end of line.
-	  w e $       Move to next word, end of word, end of line.
-	  0           Move all the way left.
-	  dd          Delete the line.
-	  u U <C-R>   Undo a change, all changes on the line, redo.
+          w e $       Move to next word, end of word, end of line.
+          0           Move all the way left.
+          dd          Delete the line.
+          u U <C-R>   Undo a change, all changes on the line, redo.
 
      3.   p           Put (paste) recently deleted or yanked text.
           rx          Replace one character with x.
-	  ce cw c$    Change text to end of word, next word, end of line.
+          ce cw c$    Change text to end of word, next word, end of line.
 
      4.   <C-G>       See filename.
           G gg 123G   Go to last line, first line, line 123.
-	  /hello      Search for 'hello'.
-	  n N         Search next, previous.
-	  ?hello      Search for 'hello' in reverse direction.
-	  <C-O> <C-I> Jump back to where you were, forward. **WAY COOL**
-	  %           Jump to matching ( [ { < > } ] ).
+          /hello      Search for 'hello'.
+          n N         Search next, previous.
+          ?hello      Search for 'hello' in reverse direction.
+          <C-O> <C-I> Jump back to where you were, forward. **WAY COOL**
+          %           Jump to matching ( [ { < > } ] ).
           :%s/a/b/gc  Replace a's with b's on [%] every line, multiple [g]
-	              times per line, with [c] confirmation.
+                      times per line, with [c] confirmation.
 
      5.   :!CMD       Run external command CMD, e.g. :!ls or :!dir.
           v           Visually select text.
           :w FILE     Write selected text to FILE.
-	  :r FILE     Read in contents of FILE.
-	  :r !CMD     Read in the output from running CMD.
+          :r FILE     Read in contents of FILE.
+          :r !CMD     Read in the output from running CMD.
 
      6.   o O         Open a new line below, above.
           a           Append text after the cursor.
-	  R           Replace (overwrite) text.
-	  yw          Yank (copy) a word.
-	  :set OPT    Turn option OPT on.
-	  :set noOPT  Turn option OPT off.
+          R           Replace (overwrite) text.
+          yw          Yank (copy) a word.
+          :set OPT    Turn option OPT on.
+          :set noOPT  Turn option OPT off.
 
      7.   :h :help    Open help window.
           <C-W><C-W>  Move to next window.
-	  :e $MYVIMRC Edit your Vim config file.
-	  <C-D> <TAB> In commandline mode, suggest completions.
+          :e $MYVIMRC Edit your Vim config file.
+          <C-D> <TAB> In commandline mode, suggest completions.
 
      If any of these are totally unfamiliar, go back to vimtutor and catch up.
 
@@ -65,20 +65,20 @@
      try to apply what you learn in real situations. Don't move on until
 
           - you learn to use the command without thinking too hard,
-	    or
-	  - you decide you don't really want to use it anyway.
+            or
+          - you decide you don't really want to use it anyway.
 
      You don't have to learn everything, just the parts you find useful.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Lesson 8: FILLING IN THE BLANKS
+                        Lesson 8: FILLING IN THE BLANKS
 
      Vimtutor introduces many commands, but skips closely related alternate
      commands. This section will introduce the alternate versions of the
      commands you already know. It should also help reinforce your knowledge.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		       Lesson 8.1: PAGING AND BACKSPACING
+                       Lesson 8.1: PAGING AND BACKSPACING
 
   1. In Lesson 1 you learned to move around with h,j,k,l. Press j and k to
      move down and up.
@@ -100,9 +100,9 @@ NOTE: Typically, the upper-case version of a command in normal mode does
       something similar, but different.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		      Lesson 8.2: MANY WAYS TO INSERT MODE
+                      Lesson 8.2: MANY WAYS TO INSERT MODE
 
-	     ** Press I to insert at the beginning of the line. **
+             ** Press I to insert at the beginning of the line. **
        ** Press C to chop off the end of the line and insert new text. **
 
   1. You know to use i, a, and A to insert, append, and append at the end of
@@ -128,20 +128,20 @@ NOTE: Typically, the upper-case version of a command in normal mode does
 ---> The end of this sentence is now ungarbled.
 
 NOTE:     I           Insert text at the beginning of the line, but after any
-	              whitespace.
-	  C  c$       Delete the rest of the line and enter insert mode.
-	  S  cc       Delete the whole line and enter insert mode.
+                      whitespace.
+          C  c$       Delete the rest of the line and enter insert mode.
+          S  cc       Delete the whole line and enter insert mode.
           s           Delete one character and enter insert mode. If there is
-	              a visual selection, delete that.
+                      a visual selection, delete that.
 
 NOTE: All these letters enter insert mode:  a A i I s S c C o O
 
 NOTE: R  enters replace mode, which is similar to insert mode.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			   Lesson 8.3: WORD MOVEMENTS
+                           Lesson 8.3: WORD MOVEMENTS
 
-	      ** Use the W, B, and E keys to move among words. **
+              ** Use the W, B, and E keys to move among words. **
 
      Movements commands can be used alone, just to move, or after an operator,
      to influence what it operates on.
@@ -180,12 +180,12 @@ NOTE: W, B, and E operate on WORDS. WORDS are only delimited by whitespace,
      these commands:  d2W  c3w  dE
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		    Lesson 8.4: SENTENCE, PARAGRAPH MOVEMENT
+                    Lesson 8.4: SENTENCE, PARAGRAPH MOVEMENT
 
   1. {{TODO: dap dip das dis}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		     Lesson 8.5: MAGIC CHARACTERS IN SEARCH
+                     Lesson 8.5: MAGIC CHARACTERS IN SEARCH
 
   1. Turn on search match highlighting. Type  :set hls  and press enter.
 
@@ -215,36 +215,36 @@ NOTE: The magic that is happening is actually regular expressions. There are
       more information, see  :help regexp
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Lesson 8.6: MAGIC CHARACTER MEANINGS
+                        Lesson 8.6: MAGIC CHARACTER MEANINGS
 
       This section will very briefly describe the meanings of the default
       magic characters in search (regular expressions).
 
             ^     This character matches the beginning of a line as though
-	          that were a character. It is only magic when used at the
-		  beginning of the search pattern.
+                  that were a character. It is only magic when used at the
+                  beginning of the search pattern.
 
             $     Matches the end of a line. It is only magic when used at
-	          the end of the search pattern.
+                  the end of the search pattern.
 
             .     Matches any character except a line break.
 
-	    *     Means that the preceding character can be matched zero or
-	          more times. E.g.  ba*  matches all these:
-		      'b'  'ba'  'baa'  'baaa'  'baaaa'  ...
+            *     Means that the preceding character can be matched zero or
+                  more times. E.g.  ba*  matches all these:
+                      'b'  'ba'  'baa'  'baaa'  'baaaa'  ...
 
-	    [     Specifies a group of characters, only one of which must
-	          match. E.g.  b[eoy]  matches  'be'  or  'bo'  or  'by'.
+            [     Specifies a group of characters, only one of which must
+                  match. E.g.  b[eoy]  matches  'be'  or  'bo'  or  'by'.
 
             /     Indicates the end of the search pattern.
 
-	    \     Removes (or adds) magic on the next character.
+            \     Removes (or adds) magic on the next character.
 
-	    ~     Matches the last used substitute string. This helps you
-	          search for  new  after a  :%s/old/new  substitution.
+            ~     Matches the last used substitute string. This helps you
+                  search for  new  after a  :%s/old/new  substitution.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		       Lesson 8.7: VISUAL SELECTION MODES
+                       Lesson 8.7: VISUAL SELECTION MODES
 
      Lesson 5 taught you that  v  enters Visual mode, in which you can select
      multiple characters.
@@ -278,7 +278,7 @@ NOTE: Notice that pressing  o  still switches to the other end.
   9. Press  d  to delete the selected lines.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		     Lesson 8.7: VISUAL BLOCK MODE AND MORE
+                     Lesson 8.7: VISUAL BLOCK MODE AND MORE
 
   1. Move your cursor to the X on the first line below marked --->.
 
@@ -305,19 +305,19 @@ NOTE: Two extremely powerful commands were sneaked into this section:
       p  (put)?
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 Lesson 8.8: YANK AND SHORTCUTS
+                         Lesson 8.8: YANK AND SHORTCUTS
 
   1. Lesson 6 taught you that  y  is used to yank (copy) text.
 
   2. {{TODO: yy Y, relation to dd cc D C etc.}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-				Lesson 8 SUMMARY
+                                Lesson 8 SUMMARY
 
      {{TODO}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			    Lesson 9.1: KEY MAPPINGS
+                            Lesson 9.1: KEY MAPPINGS
 
   1. Type this, literally, including the angle brackets, then press enter:
 
@@ -327,13 +327,13 @@ NOTE: Two extremely powerful commands were sneaked into this section:
           :nmap is a command that remaps a key or keys, in normal mode,
           <F2>  is the key to remap, it could also be a sequence of keys,
                 The rest of the line is the sequence of key presses that will
-		result from pressing <F2>:
+                result from pressing <F2>:
           ^     goes to the beginning of the line,
           y$    yanks to the end of the line, not including the line break,
           :     is just like the one in :nmap -- it is the start of a command,
           <C-R> is control-R, which fetches the contents of a register,
           "     is the name of the register that contains the most recently
-	        yanked text,
+                yanked text,
           <CR>  means Carriage Return; it completes the command.
 
      What it does:
@@ -355,5 +355,31 @@ NOTE: Two extremely powerful commands were sneaked into this section:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-     This concludes the Vim Tutor Extended.
+     Addtl topics:
+          f  t  F  T              Find, till
+          ;  ,                    Find, till again
+          J                       Join lines
+          *  #                    Search word under cursor
+          >>  <<                  Indent, deindent
+          caw  diW  ci"  da(  dit Text objects
+          <C-T>  <C-D>  0<C-D>    Insert mode indent, deindent, wipe indent
+          =                       Auto format
+          :set spell              Spell checking
+          :set spelllang=en_us    in .vimrc
+          "xd  "xp                Registers
+          @x                      Macro playback
+          q                       Macro recording
+          ~                       Flip case
+          g~                      Flip case with movement
+          gu  gU                  To lower, to upper
+          u  U                    In visual mode
+          m  '  `                 Marks
+          /  :s//                 Re-search, re-substitute
+
+     Repetition commands:
+          .  @@  ;  ,  n  N
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+     This concludes the VIM Tutor Extended.
 
