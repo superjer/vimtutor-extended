@@ -83,8 +83,8 @@
   1. In Lesson 1 you learned to move around with h,j,k,l. Press j and k to
      move down and up.
 
-  2. Now we'll try <C-D> and <C-U>. These move your cursor and screen down
-     and up by half a page at a time. Browse the document and come back.
+  2. <C-D> and <C-U> move your cursor and screen down and up by half a page at
+     a time. Browse the document and come back.
 
 NOTE: <C-D> means CTRL-D, that is, press the control key and the letter D.
 
@@ -236,7 +236,8 @@ NOTE: The magic that is happening is actually regular expressions. There are
             [     Specifies a group of characters, only one of which must
                   match. E.g.  b[eoy]  matches  'be'  or  'bo'  or  'by'.
 
-            /     Indicates the end of the search pattern.
+            /     Indicates the end of the search pattern. Must be escaped
+                  with a backslash, even when using \V.
 
             \     Removes (or adds) magic on the next character.
 
@@ -271,11 +272,11 @@ NOTE: The magic that is happening is actually regular expressions. There are
   7. Make sure your cursor is still in the ---> marked area, and press  V
      (uppercase) to enter visual line-wise mode.
 
-  8. Press  j  and  k  until all four lines are selected.
+  8. Press  j  and  k  until all four lines are selected. Notice that
+     pressing  o  still switches to the other end.
 
-NOTE: Notice that pressing  o  still switches to the other end.
-
-  9. Press  d  to delete the selected lines.
+  9. Press  d  to delete the selected lines. Press  u  to undo the deletion.
+     Press  gv  to get your visual selection back.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                      Lesson 8.7: VISUAL BLOCK MODE AND MORE
@@ -314,10 +315,92 @@ NOTE: Two extremely powerful commands were sneaked into this section:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                 Lesson 8 SUMMARY
 
+     To move a half page down press:   <C-D>
+     To move a half page up press:     <C-U>
+
+     To delete the character to the left of the cursor:    X
+     To insert text at the beginning of the line:          I
+     To change from the cursor to the end of the line:     C
+     To change (substitute) the whole line:                S
+     To delete one character and enter insert mode:        s
+
+     To move forward a word or WORD:        w   W
+     To move backward a word or WORD:       b   B
+     To move to the end of a word or WORD:  e   E
+
+     {{TODO: 8.4}}
+
+     To remove the magic meaning from characters in search, use:   \
+     To turn off all magic in search, add a  \V  to the beginning, e.g.
+            /\Vsafe*to[search]
+     The following characters have magic meaning in search by default:
+            ^ $ . * [ / \ ~
+
+     In visual mode, to move the other end of the selection:    o
+     To select whole lines visually:                            V
+     To select a block of text:                                 <C-V>
+     To get your visual selection back after losing it:         gv
+
+     {{TODO: 8.8}}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                           Lesson 9.1: SEARCH TRICKS
+
+  1. If you're brave, search for the URL below, marked --->, by typing:
+         /http:\/\/192\.168\.0\.11\/\~bs\/page\.html?lang=en_us
+
+NOTE: That is AWFULLY hard to type. It's hard to remember which characters
+      are magic. Forward slashes cannot even be made non-magic.
+
+  2. Try this search instead:
+         /http:..192.168.0.11..bs.page.html?lang=en_us
+
+---> http://192.168.0.11/~bs/page.html?lang=en_us
+
+NOTE: Technically, that could match something you're not interested in, but it
+      is unlikely. If you're not too picky, just use  .  to match any character
+      where it makes things easier.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Lesson 9.2: THE BENEFIT OF THE MAGIC CHARACTERS
+
+  1. Think about how you would search for all HTTP URLs that end with '.htm'
+     What other tools might you use?
+
+  2. Turn on highlighting by typing   :set hlsearch
+
+  3. Search the text below marked ---> by typing:
+         /http:\S*\.htm\>
+
+---> This url is bad http://example.net/some/path.txt but this next one is
+---> good http://example.net/some/path.htm, as it starts with
+---> http: and ends with .htm  <--- however, that doesn't match because there
+---> are http://spaces.local/in/it.html ... http://secure.local/urls.htm
+---> should https://not.match.example.org/the/pattern.htm nor
+---> should this http://wrong.local/extension.xhtm
+
+  4. Make sure your search found exactly two URLs in the above text. If not,
+     fix your typos and try again. You can use the up arrow to recall your
+     last search.
+
+     Let's examine the parts of the search pattern to understand it:
+
+         http:    This part is literal. It matches 'http:' literally.
+         \S       Magically matches any one non-whitespace character.
+         *        The star means the previous character can appear zero or
+                  more times. That is, zero or more non-whitespace characters.
+         \.       Matches a literal dot. Without the slash it would match
+                  any single character.
+         htm      Matches 'htm' literally.
+         \>       Magically matches the end-of-a-word.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                Lesson 9 SUMMARY
+
      {{TODO}}
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 9.1: KEY MAPPINGS
+                           Lesson 10.1: KEY MAPPINGS
 
   1. Type this, literally, including the angle brackets, then press enter:
 
