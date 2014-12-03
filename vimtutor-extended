@@ -182,7 +182,30 @@ NOTE: W, B, and E operate on WORDS. WORDS are only delimited by whitespace,
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                     Lesson 8.4: SENTENCE, PARAGRAPH MOVEMENT
 
-  1. {{TODO: dap dip das dis}}
+     Vim also understands paragraphs and sentences.
+
+  1. Press  {  and  }  to move from paragraph to paragraph.
+
+  2. Press  (  and  )  to move among sentences.
+
+  3. Place your cursor at an earler section in this file.
+
+  4. Press  vap  to visually select a whole paragraph.
+
+  5. Press  d  to delete the selected paragaph.
+
+  6. Find another paragraph and press  dap  to delete it immediately.
+
+  7. Press  p  to put the paragraph somewhere else.
+
+  8. Try the following commands around the file:
+
+           cip      Change inner paragraph (do not touch the space around it).
+           d3}      Delete from here through the next 3 paragraphs.
+           {d3}     Go to the beginning of this paragraph, and then delete 3.
+           das      Delete a sentence.
+           d)       Delete to the end of the sentence.
+           d(       Delete to the beginning of the sentence.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                      Lesson 8.5: MAGIC CHARACTERS IN SEARCH
@@ -328,7 +351,14 @@ NOTE: Two extremely powerful commands were sneaked into this section:
      To move backward a word or WORD:       b   B
      To move to the end of a word or WORD:  e   E
 
-     {{TODO: 8.4}}
+     To move forward or back a sentence:    )   (
+     To move forward or back a paragraph:   }   {
+
+     To delete/change/select a sentence:    das  cas  vas
+       Just the inner part (no spaces):     dis  cis  vis
+
+     To delete/change/select a paragraph:   dap  cap  vap
+       Just the inner part (no spaces):     dip  cip  vip
 
      To remove the magic meaning from characters in search, use:   \
      To turn off all magic in search, add a  \V  to the beginning, e.g.
@@ -350,7 +380,7 @@ NOTE: Two extremely powerful commands were sneaked into this section:
          /http:\/\/192\.168\.0\.11\/\~bs\/page\.html?lang=en_us
 
 NOTE: That is AWFULLY hard to type. It's hard to remember which characters
-      are magic. Forward slashes cannot even be made non-magic.
+      are magic. Forward slashes cannot even be made non-magic with  \V.
 
   2. Try this search instead:
          /http:..192.168.0.11..bs.page.html?lang=en_us
