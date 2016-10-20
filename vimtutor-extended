@@ -188,7 +188,7 @@ NOTE: W, B, and E operate on WORDS. WORDS are only delimited by whitespace,
 
   2. Press  (  and  )  to move among sentences.
 
-  3. Place your cursor at an earler section in this file.
+  3. Place your cursor at an earlier section in this file.
 
   4. Press  vap  to visually select a whole paragraph.
 
@@ -333,7 +333,20 @@ NOTE: Two extremely powerful commands were sneaked into this section:
 
   1. Lesson 6 taught you that  y  is used to yank (copy) text.
 
-  2. {{TODO: yy Y, relation to dd cc D C etc.}}
+     {{TODO: yy Y, relation to dd cc D C etc.}}
+
+  2. Press  yy  to yank a whole line. Try it and use  p  to put (paste).
+
+NOTE: yy  is similar to  dd  to delete a whole line and  cc  to change a whole
+      line.
+
+  3. You can also use  Y  which does the same thing.
+
+NOTE: Y  is NOT similar to  D  (delete the rest of the line) or to  C  (change
+      the rest of the line). You may expect  Y  to yank the rest of the line
+      but it does not. Use  y$  for that. You can fix this inconsistency with:
+
+          :nnoremap Y y$
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                 Lesson 8 SUMMARY
@@ -351,14 +364,10 @@ NOTE: Two extremely powerful commands were sneaked into this section:
      To move backward a word or WORD:       b   B
      To move to the end of a word or WORD:  e   E
 
-     To move forward or back a sentence:    )   (
-     To move forward or back a paragraph:   }   {
-
-     To delete/change/select a sentence:    das  cas  vas
-       Just the inner part (no spaces):     dis  cis  vis
-
-     To delete/change/select a paragraph:   dap  cap  vap
-       Just the inner part (no spaces):     dip  cip  vip
+     To move by sentence:                    (    )
+     To move by paragraph:                   {    }
+     To delete, change or yank a paragraph:  dap  cap  yap
+     To delete, change or yank a sentence:   das  cas  yas
 
      To remove the magic meaning from characters in search, use:   \
      To turn off all magic in search, add a  \V  to the beginning, e.g.
@@ -371,7 +380,7 @@ NOTE: Two extremely powerful commands were sneaked into this section:
      To select a block of text:                                 <C-V>
      To get your visual selection back after losing it:         gv
 
-     {{TODO: 8.8}}
+     To yank (copy) a whole line:     yy   Y
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                            Lesson 9.1: SEARCH TRICKS
